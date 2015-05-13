@@ -1,0 +1,19 @@
+{
+  "name": "dku-js-lectures",
+  "version": "1.0.0",
+  "description": "Lectures about Javascript for the DKU",
+  "main": "async-asyncexample-01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DeutchKazakhUnivercity/lectures"
+  },
+  "author": "Andrey Kurdyumov <kant2002@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeutchKazakhUnivercity/lectures/issues"
+  },
+  "homepage": "https://github.com/DeutchKazakhUnivercity/lectures"
+}
