@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DeutchKazakhUnivercity/lectures/issues"
   },
-  "homepage": "https://github.com/DeutchKazakhUnivercity/lectures"
+  "homepage": "https://github.com/DeutchKazakhUnivercity/lectures",
+  "dependencies": {
+    "q": "^1.4.0"
+  }
 }
