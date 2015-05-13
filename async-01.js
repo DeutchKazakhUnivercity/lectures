@@ -1,5 +1,11 @@
+// This example looks for all files in the current directory
+// and search for the files which contains the 
+// specified text.
+
 var fs = require('fs');
 var path = require('path');
+
+var textToSearch = 'ne';
 
 function testFile(fileName) {
     fs.lstat(fileName, function (err, stat) {
@@ -8,7 +14,7 @@ function testFile(fileName) {
             fs.readFile(fileName, function (err, fileContent) {
                 if (err) throw err;
                 var fileText = fileContent.toString();
-                if (fileText.indexOf('ne') != -1) {
+                if (fileText.indexOf(textToSearch) != -1) {
                     console.log(fileName);
                 }
             });
