@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/DeutchKazakhUnivercity/lectures",
   "dependencies": {
+    "axios": "^0.5.4",
     "q": "^1.4.0"
   }
 }
