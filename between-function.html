@@ -1,0 +1,135 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+    <body>
+        <table cellspacing="1" border="1">
+            <thead>
+                <tr>
+                    <td>Инструкции</td>
+                    <td>source</td>
+                    <td>start</td>
+                    <td>end</td>
+                    <td>startIndex</td>
+                    <td>endIndex</td>
+                    <td>startIndex + start.length</td>
+                    <td>Результат</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Начало алгоритма</td>
+                    <td>
+
+&lt;h1 class="title"&gt;&lt;a href="http://habrahabr.ru/company/selectel/blog/258173/" class="post_title"&gt;Запуск услуги «Виртуальное приватное облако»&lt;/a&gt;&lt;/h1&gt;
+                    </td>
+                    <td>&lt;h1 class="title"&gt;</td>
+                    <td>&lt;/h1&gt;</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>var startIndex = source.indexOf(start)</td>
+                    <td>
+
+<span style="color:green">&lt;h1 class="title"&gt;</span>&lt;a href="http://habrahabr.ru/company/selectel/blog/258173/" class="post_title"&gt;Запуск услуги «Виртуальное приватное облако»&lt;/a&gt;&lt;/h1&gt;
+                    </td>
+                    <td>&lt;h1 class="title"&gt;</td>
+                    <td>&lt;/h1&gt;</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>if (startIndex === -1) {</td>
+                    <td>
+
+&lt;h1 class="title"&gt;&lt;a href="http://habrahabr.ru/company/selectel/blog/258173/" class="post_title"&gt;Запуск услуги «Виртуальное приватное облако»&lt;/a&gt;&lt;/h1&gt;
+                    </td>
+                    <td>&lt;h1 class="title"&gt;</td>
+                    <td>&lt;/h1&gt;</td>
+                    <td><span style="color:red">0<span<</td>
+                    <td></td>
+                    <td></td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>{
+        return null;
+    }</td>
+                    <td>
+
+&lt;h1 class="title"&gt;&lt;a href="http://habrahabr.ru/company/selectel/blog/258173/" class="post_title"&gt;Запуск услуги «Виртуальное приватное облако»&lt;/a&gt;&lt;/h1&gt;
+                    </td>
+                    <td>&lt;h1 class="title"&gt;</td>
+                    <td>&lt;/h1&gt;</td>
+                    <td>0</td>
+                    <td></td>
+                    <td></td>
+                    <td>содержимое if пропускается</td>
+                </tr>
+
+                <tr>
+                    <td>var endIndex = source.indexOf(end, startIndex);</td>
+                    <td>
+
+&lt;h1 class="title"&gt;&lt;a href="http://habrahabr.ru/company/selectel/blog/258173/" class="post_title"&gt;Запуск услуги «Виртуальное приватное облако»&lt;/a&gt;<span style="color: green">&lt;/h1&gt;</span>
+                    </td>
+                    <td>&lt;h1 class="title"&gt;</td>
+                    <td>&lt;/h1&gt;</td>
+                    <td>0</td>
+                    <td>145</td>
+                    <td></td>
+                    <td>содержимое if пропускается</td>
+                </tr>
+
+                <tr>
+                    <td>Все значения</td>
+                    <td>
+
+<span style="color: blue; font-weight: bold; font-size: 2em;">&lt;</span>h1 class="title"&gt;<span style="color: green;  font-weight: bolder; font-size: 2em;">&lt;</span>a href="http://habrahabr.ru/company/selectel/blog/258173/" class="post_title"&gt;Запуск услуги «Виртуальное приватное облако»&lt;/a&gt;<span style="color: red ;font-weight: bold; font-size: 2em;">&lt;</span>/h1&gt;
+                    </td>
+                    <td>&lt;h1 class="title"&gt;</td>
+                    <td>&lt;/h1&gt;</td>
+                    <td><span style="color: blue">0</span></td>
+                    <td><span style="color: red">145</span></td>
+                    <td><span style="color: green">18</span></td>
+                    <td>содержимое if пропускается</td>
+                </tr>
+            </tbody>
+        </table>
+        <span id="title"></span>
+
+
+
+
+    <script>
+    /**
+Нахождение строки которая
+расположена между заданными строками.
+*/
+function between(source, start, end) {
+    var startIndex = source.indexOf(start);
+    if (startIndex === -1) {
+        return null;
+    }
+
+    var endIndex = source.indexOf(end, startIndex);
+    console.log(startIndex + start.length);
+    return source.substring(
+        startIndex + start.length,
+        endIndex);
+}
+
+        var title = "<h1 class=\"title\"><a href=\"http://habrahabr.ru/company/selectel/blog/258173/\" class=\"post_title\">Запуск услуги «Виртуальное приватное облако»</a></h1>";
+
+var data = between(title, "<h1 class=\"title\">", "</h1>")
+        //document.getElementById("title").innerText = title;
+    </script>
+    </body>
+</html>
