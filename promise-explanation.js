@@ -37,15 +37,23 @@ function getTitles(html) {
         startIndex = html.indexOf(startMarker);
     
     while (startIndex !== -1) {
-        var data = between(html, startMarker, "</h1>");
-        data = between(data, ">", "</a>");
-        result.push(data);
+        var header = getFirstHeader(html, startMarker);
+        result.push(header);
         
         html = html.substring(startIndex + 1);
         startIndex = html.indexOf(startMarker)
     }
     
     return result;
+}
+
+/**
+* Находит первый заголовок в HTML коде
+*/
+function getFirstHeader(html, startMarker) {
+    var data = between(html, startMarker, "</h1>");
+    data = between(data, ">", "</a>");
+    return data;
 }
 
 /**
@@ -95,12 +103,12 @@ function doSync() {
 Асинхронный вариант с использованием Promise.
 */
 function doPromise() {
-    return getHtml()
-        .then(getTitles)
-        .then(printFirstAndLast);
+    var htmlPromise = getHtml();
+    var titlePromise = htmlPromise.then(getTitles); // Вместо getTitles(htmlPromise)
+    titlePromise.then(printFirstAndLast);
 }
 
-//doPromise();
+doPromise();
 
 // Простые тесты для функции printFirstAndLast
 //printFirstAndLast(["123", "234", "345", "456", "567", "678", "789", "890"]);
@@ -119,12 +127,12 @@ function doPromise() {
 //data = between(data, " class=\"post_title\">", "</a>");
 //console.log(data);
 
-function undefinedResult() {
-    var data = "data";
-
-    //console.log(data);
-    return data;
-}
-
-var result = undefinedResult();
-console.log(result);
+// function undefinedResult() {
+//     var data = "data";
+//
+//     //console.log(data);
+//     return data;
+// }
+//
+// var result = undefinedResult();
+// console.log(result);
