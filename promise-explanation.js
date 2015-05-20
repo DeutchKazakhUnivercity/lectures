@@ -106,6 +106,11 @@ function doPromise() {
     var htmlPromise = getHtml();
     var titlePromise = htmlPromise.then(getTitles); // Вместо getTitles(htmlPromise)
     titlePromise.then(printFirstAndLast);
+
+    // Или более короткая форма записи того же самого
+    // getHtml()
+    //     .then(getTitles)
+    //     .then(printFirstAndLast);
 }
 
 doPromise();
